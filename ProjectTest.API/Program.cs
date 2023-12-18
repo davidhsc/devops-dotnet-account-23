@@ -11,7 +11,7 @@ var app = builder.Build();
 app.MapGet("/", () =>
 {
     app.Logger.LogInformation("Initial Home Get");
-    return "GET - Net 6 Running ... 15122023-v1.0.0 CI/CD PROJECT FREE STYLE JENKINS JOB   v1.0.2 POLYGLOT STUDY";
+    return "GET - Net 6 Running ... 15122023-v1.0.0 CI/CD PROJECT FREE STYLE JENKINS JOB   v1.0.2 POLYGLOT STUDY - DAVID DIAZ";
 });
 
 app.MapPost("/", () =>
