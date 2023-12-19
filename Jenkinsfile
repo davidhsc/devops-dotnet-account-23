@@ -21,6 +21,21 @@ pipeline {
                
             }
         }
+        stage('AWS EKS DEPLOY') {
+            steps {
+               bat(script: 'aws eks --region us-east-1 update-kubeconfig --name clusterAWSEKS ' , returnStdout:true);
+               
+               bat(script: 'kubectl describe configmap -n kube-system aws-auth ' , returnStdout:true);
+               
+               bat(script: 'kubectl edit -n kube-system configmap/aws-auth ' , returnStdout:true);
+
+               bat(script: 'kubectl apply -f .\aws-auth-cm.yml ' , returnStdout:true);
+
+               bat(script: 'kubectl describe configmap -n kube-system aws-auth ' , returnStdout:true);
+
+            }
+        }
+        /*
         stage('AZURE CONTAINER INSTANCE') {
             steps {
                bat(script: 'az login --service-principal --username aa424892-e8d3-40a1-8ddd-a967b9664eeb --password QbZ8Q~T5aA8jC5XaGVPlvwMDtVsBw6L-gRYqba7j --tenant b3761ae1-c9a2-4151-9260-ac0345c5e721 ' , returnStdout:true);
@@ -31,6 +46,7 @@ pipeline {
                
             }
         }
+        */
         
     }
 }
