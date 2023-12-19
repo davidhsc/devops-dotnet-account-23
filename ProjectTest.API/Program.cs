@@ -11,7 +11,7 @@ var app = builder.Build();
 app.MapGet("/", () =>
 {
     app.Logger.LogInformation("Initial Home Get");
-    return "GET - Net 6 Running ... I/CD PROJECT PIPELINE JENKINS  & AZURE CONTAINER INSTANCE - DAVID DIAZ -- -- 20231218";
+    return "GET - Net 6 Running ... I/CD PROJECT PIPELINE JENKINS WITH JENKINSFILE  & AZURE CONTAINER INSTANCE - DAVID DIAZ -- -- 20231218 ";
 });
 
 app.MapPost("/", () =>
