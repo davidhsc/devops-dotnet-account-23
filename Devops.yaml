@@ -16,9 +16,9 @@ spec:
     spec:
       containers:
       - name: service-devops
-        image: 532336934360.dkr.ecr.us-east-1.amazonaws.com/devops
+        image: davidhsc/devops-ms-account
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 kind: Service
 apiVersion: v1
@@ -31,4 +31,4 @@ spec:
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 8080
+    targetPort: 80
