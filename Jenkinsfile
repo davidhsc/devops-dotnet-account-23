@@ -27,11 +27,11 @@ pipeline {
                
                bat(script: 'kubectl describe configmap -n kube-system aws-auth ' , returnStdout:true);
                
-               bat(script: 'kubectl edit -n kube-system configmap/aws-auth ' , returnStdout:true);
+               //bat(script: 'kubectl edit -n kube-system configmap/aws-auth ' , returnStdout:true);
 
-               bat(script: 'kubectl apply -f .\aws-auth-cm.yml ' , returnStdout:true);
+               //bat(script: 'kubectl apply -f .\aws-auth-cm.yml ' , returnStdout:true);
 
-               bat(script: 'kubectl describe configmap -n kube-system aws-auth ' , returnStdout:true);
+               //bat(script: 'kubectl describe configmap -n kube-system aws-auth ' , returnStdout:true);
 
             }
         }
